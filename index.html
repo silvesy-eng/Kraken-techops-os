@@ -1,0 +1,462 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="A candidate-built TechOps operating model for Kraken — demonstrating service management, capacity planning, incident leadership, technical operations and continuous improvement." />
+  <title>Kraken TechOps Operating System — Sergio Da Silva</title>
+  <meta name="theme-color" content="#07110e" />
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="ambient ambient-one"></div>
+  <div class="ambient ambient-two"></div>
+
+  <header class="site-header">
+    <a class="brand" href="#top" aria-label="Back to top">
+      <span class="brand-mark">K</span>
+      <span>
+        <strong>TechOps OS</strong>
+        <small>Candidate concept</small>
+      </span>
+    </a>
+
+    <nav class="desktop-nav" aria-label="Primary navigation">
+      <a href="#control-centre">Control centre</a>
+      <a href="#operating-model">Operating model</a>
+      <a href="#incidents">Incidents</a>
+      <a href="#roadmap">90-day plan</a>
+      <a href="#fit">Why me</a>
+    </nav>
+
+    <button class="menu-button" id="menuButton" aria-expanded="false" aria-controls="mobileNav">Menu</button>
+  </header>
+
+  <nav class="mobile-nav" id="mobileNav" aria-label="Mobile navigation">
+    <a href="#control-centre">Control centre</a>
+    <a href="#operating-model">Operating model</a>
+    <a href="#incidents">Incidents</a>
+    <a href="#roadmap">90-day plan</a>
+    <a href="#fit">Why me</a>
+  </nav>
+
+  <main id="top">
+    <section class="hero section-shell">
+      <div class="hero-copy reveal">
+        <div class="eyebrow"><span class="status-dot"></span> Interview artefact · TechOps Team Lead</div>
+        <h1>Keep Kraken moving <span>at pace.</span></h1>
+        <p class="hero-lede">
+          A practical operating model for a small, global TechOps team: protect focus, reduce toil,
+          improve reliability, and stay close enough to the work to know what people are actually experiencing.
+        </p>
+
+        <div class="hero-actions">
+          <a class="button button-primary" href="#control-centre">Explore the operating model</a>
+          <a class="button button-ghost" href="#fit">Why I built this</a>
+        </div>
+
+        <div class="hero-principles">
+          <span>People first</span>
+          <span>Secure by design</span>
+          <span>Automate toil</span>
+          <span>Global standards, local context</span>
+        </div>
+      </div>
+
+      <aside class="hero-panel reveal" aria-label="TechOps pulse">
+        <div class="panel-topline">
+          <div>
+            <span class="label">TECHOPS PULSE</span>
+            <h2>Today</h2>
+          </div>
+          <span class="live-pill"><span class="pulse"></span> Demo data</span>
+        </div>
+
+        <div class="pulse-grid">
+          <div class="metric-card">
+            <span>Open support</span>
+            <strong>24</strong>
+            <small>↓ 18% vs 7d avg</small>
+          </div>
+          <div class="metric-card">
+            <span>P1/P2 incidents</span>
+            <strong>0</strong>
+            <small>Last P2: 11d ago</small>
+          </div>
+          <div class="metric-card">
+            <span>Device compliance</span>
+            <strong>96.8%</strong>
+            <small>Target ≥ 97%</small>
+          </div>
+          <div class="metric-card">
+            <span>Planned work</span>
+            <strong>71%</strong>
+            <small>Protected this week</small>
+          </div>
+        </div>
+
+        <div class="mini-chart" aria-label="Illustrative weekly demand chart">
+          <div class="mini-chart-head">
+            <span>Demand vs protected project capacity</span>
+            <span class="muted">Mon–Fri</span>
+          </div>
+          <div class="bars">
+            <span style="--h:55%"></span>
+            <span style="--h:72%"></span>
+            <span style="--h:62%"></span>
+            <span style="--h:81%"></span>
+            <span style="--h:48%"></span>
+          </div>
+          <div class="capacity-line"><span>protected project capacity</span></div>
+        </div>
+      </aside>
+    </section>
+
+    <section class="section-shell intro-grid reveal">
+      <div>
+        <span class="section-kicker">THE IDEA</span>
+        <h2>TechOps should be visible as a system.</h2>
+      </div>
+      <p>
+        The team should not have to choose between being responsive today and getting better tomorrow.
+        This concept makes both visible: live service demand, incidents, planned technical change,
+        security obligations, team capacity and continuous improvement — in one operating rhythm.
+      </p>
+    </section>
+
+    <section id="control-centre" class="section-shell section-block">
+      <div class="section-heading reveal">
+        <div>
+          <span class="section-kicker">01 · CONTROL CENTRE</span>
+          <h2>Know what deserves attention now.</h2>
+        </div>
+        <p>A deliberately small set of signals to help a lean team prioritise without turning TechOps into dashboard theatre.</p>
+      </div>
+
+      <div class="dashboard-grid reveal">
+        <article class="card queue-card">
+          <div class="card-heading">
+            <div>
+              <span class="label">SUPPORT PIPELINE</span>
+              <h3>Work by urgency</h3>
+            </div>
+            <span class="tag healthy">Healthy</span>
+          </div>
+
+          <div class="queue-row">
+            <div><span class="priority p1">P1</span><strong>Critical</strong></div>
+            <span>0</span>
+          </div>
+          <div class="queue-row">
+            <div><span class="priority p2">P2</span><strong>High impact</strong></div>
+            <span>3</span>
+          </div>
+          <div class="queue-row">
+            <div><span class="priority p3">P3</span><strong>Standard</strong></div>
+            <span>16</span>
+          </div>
+          <div class="queue-row">
+            <div><span class="priority p4">P4</span><strong>Low / request</strong></div>
+            <span>5</span>
+          </div>
+
+          <div class="card-note">Age and business impact matter more than raw ticket count.</div>
+        </article>
+
+        <article class="card capacity-card">
+          <div class="card-heading">
+            <div>
+              <span class="label">CAPACITY</span>
+              <h3>Protect improvement work</h3>
+            </div>
+            <span id="capacityStatus" class="tag">Balanced</span>
+          </div>
+
+          <label class="range-label" for="reactiveRange">
+            <span>Reactive support</span>
+            <strong><span id="reactiveValue">40</span>%</strong>
+          </label>
+          <input id="reactiveRange" type="range" min="20" max="70" value="40" />
+
+          <div class="allocation-bar" aria-label="Capacity allocation">
+            <span id="reactiveBar" class="alloc reactive" style="width:40%">Support</span>
+            <span id="projectBar" class="alloc project" style="width:35%">Projects</span>
+            <span id="improveBar" class="alloc improve" style="width:25%">Improve</span>
+          </div>
+
+          <div class="allocation-legend">
+            <span><i class="dot reactive-dot"></i>Reactive <b id="reactiveLegend">40%</b></span>
+            <span><i class="dot project-dot"></i>Projects <b id="projectLegend">35%</b></span>
+            <span><i class="dot improve-dot"></i>Improvement <b id="improveLegend">25%</b></span>
+          </div>
+
+          <div id="capacityAdvice" class="decision-box">
+            Healthy balance: enough runway for planned change without starving frontline support.
+          </div>
+        </article>
+
+        <article class="card compliance-card">
+          <div class="card-heading">
+            <div>
+              <span class="label">ENDPOINT HEALTH</span>
+              <h3>Trust, posture, patching</h3>
+            </div>
+            <span class="tag watch">Watch</span>
+          </div>
+
+          <div class="radial-wrap">
+            <div class="radial" style="--value:96.8"><span>96.8<small>%</small></span></div>
+            <div class="radial-copy">
+              <strong>Device compliance</strong>
+              <span>Target ≥ 97%</span>
+              <small>Prioritise high-risk drift, not cosmetic variance.</small>
+            </div>
+          </div>
+
+          <div class="compliance-list">
+            <div><span>Disk encryption</span><strong>99.4%</strong></div>
+            <div><span>EDR healthy</span><strong>98.9%</strong></div>
+            <div><span>OS supported</span><strong>97.6%</strong></div>
+            <div><span>Phishing-resistant MFA</span><strong>91.2%</strong></div>
+          </div>
+        </article>
+
+        <article class="card project-card">
+          <div class="card-heading">
+            <div>
+              <span class="label">CHANGE PORTFOLIO</span>
+              <h3>Move the system forward</h3>
+            </div>
+            <span class="tag">3 active</span>
+          </div>
+
+          <div class="project-item">
+            <div class="project-meta"><strong>IdP hardening</strong><span>Identity</span></div>
+            <div class="progress"><span style="width:78%"></span></div>
+            <small>78% · Final cohort + break-glass review</small>
+          </div>
+          <div class="project-item">
+            <div class="project-meta"><strong>MDM migration</strong><span>Endpoints</span></div>
+            <div class="progress"><span style="width:54%"></span></div>
+            <small>54% · macOS pilot complete</small>
+          </div>
+          <div class="project-item">
+            <div class="project-meta"><strong>Office network refresh</strong><span>Infrastructure</span></div>
+            <div class="progress"><span style="width:31%"></span></div>
+            <small>31% · Vendor design review</small>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section id="operating-model" class="section-shell section-block">
+      <div class="section-heading reveal">
+        <div>
+          <span class="section-kicker">02 · OPERATING MODEL</span>
+          <h2>Lean by design. Disciplined where it matters.</h2>
+        </div>
+        <p>Enough structure to scale safely — without recreating heavyweight enterprise IT.</p>
+      </div>
+
+      <div class="principle-grid reveal">
+        <article class="principle-card">
+          <span class="principle-number">01</span>
+          <h3>Stay in the work</h3>
+          <p>Leaders retain hands-on exposure to tickets, incidents and user friction so priorities are grounded in reality.</p>
+        </article>
+        <article class="principle-card">
+          <span class="principle-number">02</span>
+          <h3>Make demand visible</h3>
+          <p>Separate interrupts from planned work. Review age, impact and recurrence — not just queue volume.</p>
+        </article>
+        <article class="principle-card">
+          <span class="principle-number">03</span>
+          <h3>Automate toil, not judgement</h3>
+          <p>Automate repetitive provisioning, evidence capture and routing. Keep humans where context and risk matter.</p>
+        </article>
+        <article class="principle-card">
+          <span class="principle-number">04</span>
+          <h3>Security × productivity</h3>
+          <p>Treat security and user experience as a joint design problem, not competing objectives owned by different teams.</p>
+        </article>
+        <article class="principle-card">
+          <span class="principle-number">05</span>
+          <h3>Global guardrails, regional ownership</h3>
+          <p>Standardise identity, device posture, incident handling and controls while allowing sensible regional execution.</p>
+        </article>
+        <article class="principle-card">
+          <span class="principle-number">06</span>
+          <h3>Close the loop</h3>
+          <p>Every meaningful incident, repeated ticket theme or failed change should produce learning, ownership and a visible follow-up.</p>
+        </article>
+      </div>
+
+      <div class="rhythm reveal">
+        <div class="rhythm-copy">
+          <span class="section-kicker">OPERATING RHYTHM</span>
+          <h3>A cadence small teams can actually sustain.</h3>
+          <p>The goal is not more meetings. It is fewer surprises, cleaner ownership and protected improvement capacity.</p>
+        </div>
+        <div class="rhythm-list">
+          <div><span>Daily</span><strong>10-minute demand + incident pulse</strong><small>What changed? What is blocked? What needs escalation?</small></div>
+          <div><span>Weekly</span><strong>Capacity + project trade-offs</strong><small>Rebalance planned work only when evidence justifies it.</small></div>
+          <div><span>Fortnightly</span><strong>Problem / toil review</strong><small>Pick one recurring source of friction to remove.</small></div>
+          <div><span>Monthly</span><strong>Service health + people growth</strong><small>Reliability, controls, skills, vendor health and roadmap.</small></div>
+        </div>
+      </div>
+    </section>
+
+    <section id="incidents" class="section-shell section-block">
+      <div class="section-heading reveal">
+        <div>
+          <span class="section-kicker">03 · INCIDENTS</span>
+          <h2>Calm response. Clear ownership. No theatre.</h2>
+        </div>
+        <p>A lightweight incident model that protects users, keeps stakeholders informed and converts disruption into learning.</p>
+      </div>
+
+      <div class="incident-layout reveal">
+        <div class="incident-stage-card">
+          <button class="incident-stage active" data-stage="detect">
+            <span>1</span><div><strong>Detect</strong><small>Confirm impact, scope, severity</small></div>
+          </button>
+          <button class="incident-stage" data-stage="stabilise">
+            <span>2</span><div><strong>Stabilise</strong><small>Restore service / reduce blast radius</small></div>
+          </button>
+          <button class="incident-stage" data-stage="communicate">
+            <span>3</span><div><strong>Communicate</strong><small>Useful updates, not noise</small></div>
+          </button>
+          <button class="incident-stage" data-stage="learn">
+            <span>4</span><div><strong>Learn</strong><small>Evidence, causes, follow-through</small></div>
+          </button>
+        </div>
+
+        <div class="incident-detail" id="incidentDetail">
+          <span class="label">DETECT</span>
+          <h3>Establish reality before solving.</h3>
+          <p>Confirm who is affected, business impact, scope, security implications and whether the failure is still expanding.</p>
+          <ul>
+            <li>Assign one accountable incident lead</li>
+            <li>Capture known / unknown / next evidence</li>
+            <li>Set severity from impact, not emotion</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section class="section-shell section-block">
+      <div class="section-heading reveal">
+        <div>
+          <span class="section-kicker">04 · PROJECT DELIVERY</span>
+          <h2>Technical change without losing the people.</h2>
+        </div>
+        <p>For identity, MDM, authentication, office and SaaS migrations, adoption quality matters as much as technical completion.</p>
+      </div>
+
+      <div class="project-playbook reveal">
+        <div class="playbook-step"><span>Discover</span><strong>Understand users, risk, dependencies and failure modes.</strong></div>
+        <div class="playbook-arrow">→</div>
+        <div class="playbook-step"><span>Design</span><strong>Agree controls, rollback, comms and measurable success.</strong></div>
+        <div class="playbook-arrow">→</div>
+        <div class="playbook-step"><span>Pilot</span><strong>Use a representative cohort and actively collect friction.</strong></div>
+        <div class="playbook-arrow">→</div>
+        <div class="playbook-step"><span>Scale</span><strong>Automate evidence, segment rollout and protect support capacity.</strong></div>
+        <div class="playbook-arrow">→</div>
+        <div class="playbook-step"><span>Close</span><strong>Remove legacy paths, document ownership and verify outcomes.</strong></div>
+      </div>
+    </section>
+
+    <section id="roadmap" class="section-shell section-block">
+      <div class="section-heading reveal">
+        <div>
+          <span class="section-kicker">05 · FIRST 90 DAYS</span>
+          <h2>Understand → stabilise → improve.</h2>
+        </div>
+        <p>I would resist arriving with a pre-baked transformation. First understand where the real constraints are.</p>
+      </div>
+
+      <div class="roadmap reveal">
+        <article>
+          <div class="roadmap-top"><span>0–30</span><strong>Understand the system</strong></div>
+          <ul>
+            <li>Work the queue and join live incidents</li>
+            <li>Map services, ownership, vendors and risk</li>
+            <li>Baseline demand, ageing, interrupt load and project commitments</li>
+            <li>1:1s with TechOps, Security, UK/APAC leaders and key partners</li>
+            <li>Identify immediate reliability or security exposures</li>
+          </ul>
+        </article>
+        <article>
+          <div class="roadmap-top"><span>31–60</span><strong>Protect focus</strong></div>
+          <ul>
+            <li>Introduce a visible capacity and prioritisation rhythm</li>
+            <li>Clarify incident roles, severity and communications</li>
+            <li>Select top recurring toil / ticket drivers</li>
+            <li>Agree regional guardrails vs global standards</li>
+            <li>Build skill matrix and development goals with the team</li>
+          </ul>
+        </article>
+        <article>
+          <div class="roadmap-top"><span>61–90</span><strong>Improve deliberately</strong></div>
+          <ul>
+            <li>Automate one high-volume, low-judgement workflow</li>
+            <li>Remove one structural cause of repeated incidents</li>
+            <li>Publish a lightweight TechOps service health view</li>
+            <li>Sequence the next two quarters of technical projects</li>
+            <li>Make ownership and operational follow-through boringly reliable</li>
+          </ul>
+        </article>
+      </div>
+    </section>
+
+    <section id="fit" class="section-shell section-block fit-section">
+      <div class="fit-copy reveal">
+        <span class="section-kicker">06 · WHY I BUILT THIS</span>
+        <h2>I like roles where leadership and configuration detail coexist.</h2>
+        <p>
+          The Kraken brief stood out because it does not treat leadership as distance from the work. That is how I have operated across international support environments: lead people, improve the system, manage incidents and still get close enough to the tooling and workflow to understand the real problem.
+        </p>
+        <p>
+          My background is broader than conventional internal IT, which is useful here. I have led multi-region technical support teams, improved service performance, built operational workflows, worked across SaaS platforms and integrations, handled high-stakes escalations, and repeatedly focused on reducing friction rather than adding process for its own sake.
+        </p>
+      </div>
+
+      <div class="fit-grid reveal">
+        <article><span>People leadership</span><strong>Led and developed international technical support teams across UK, EMEA, APAC and India.</strong></article>
+        <article><span>Service management</span><strong>Built SLA, capacity, escalation, knowledge and operational models; ITIL Foundation.</strong></article>
+        <article><span>Hands-on mindset</span><strong>Comfortable in Salesforce, Zendesk, APIs, Postman, automation tooling and workflow configuration.</strong></article>
+        <article><span>Incident leadership</span><strong>Owned escalations, customer communications and operational recovery in public-safety and transport technology.</strong></article>
+        <article><span>Scale + consistency</span><strong>Improved support performance while expanding teams, regions, workflows and partner coverage.</strong></article>
+        <article><span>Challenge convention</span><strong>I prefer the smallest amount of process that reliably improves the outcome.</strong></article>
+      </div>
+
+      <div class="gap-card reveal">
+        <div>
+          <span class="section-kicker">THE GAP I WOULD NOT HIDE</span>
+          <h3>I would need to deepen some internal-IT platform specifics quickly.</h3>
+        </div>
+        <p>
+          I would not pretend to have run every Kraken-listed tool in production. My approach would be to combine strong service/incident fundamentals and hands-on technical curiosity with focused ramp-up in the exact IAM, MDM, endpoint security and network stack in use. The role explicitly values learning — this is where I would apply it.
+        </p>
+      </div>
+    </section>
+
+    <section class="section-shell final-cta reveal">
+      <span class="section-kicker">THE OUTCOME</span>
+      <h2>A TechOps team people trust — because it is responsive today and measurably better next month.</h2>
+      <p>Built by Sergio Da Silva as an interview discussion artefact for the Kraken TechOps Team Lead role.</p>
+      <a class="button button-primary" href="#top">Back to the top</a>
+    </section>
+  </main>
+
+  <footer>
+    <div class="section-shell footer-inner">
+      <span>Candidate-built concept · Not an official Kraken product</span>
+      <span>Illustrative operational data only</span>
+    </div>
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>
